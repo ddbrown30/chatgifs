@@ -1,0 +1,138 @@
+:root {
+    --gif-search-background-color: #252529;
+}
+
+.gif-container {
+    min-height: 150px;
+}
+
+#gif-search {
+    right: 5%;
+    z-index: 51;
+    width: 90%;
+    position: absolute;
+    padding: 0 10px;
+    overflow: hidden;
+    bottom: 100%;
+}
+
+#gif-search-input {
+    width: 90%;
+    padding: 5px;
+    margin: 10px 11px;
+    color: white;
+    background: var(--gif-search-background-color);
+    border-radius: 5px;
+    font-family: "Signika";
+}
+
+.attribution {
+    border: none;
+    height: 18px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    margin-left: auto;
+}
+
+.gif-hidden {
+    display: none;
+}
+
+.slide-in-bottom {
+    -webkit-animation: slide-in-bottom 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-bottom 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#gif-search-scroll {
+    position: relative;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+#gif-search-results>img {
+    position: absolute;
+    cursor: pointer;
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    transition: all;
+    transition-duration: 250ms;
+}
+
+#gif-search-results>img:hover {
+    opacity: 0.75;
+}
+
+.gif-search-section {
+    padding: 10px 5px 10px 10px;
+    border-radius: 10px 0 0 0;
+    background: var(--gif-search-background-color);
+}
+
+.gif-search-tab {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.gif-search-tab li {
+    width: unset;
+    height: unset;
+    float: right;
+    padding: 3px 10px;
+    background-color: var(--gif-search-background-color);
+    margin-bottom: 0px;
+    cursor: pointer;
+    color: #777;
+    text-transform: uppercase;
+    transition: all 250ms ease;
+    border-radius: 8px 8px 0 0;
+}
+
+.gif-search-tab li:hover,
+.gif-search-tab li:hover:before,
+.gif-search-tab li:hover:after {
+    background-color: #F4F7F9;
+    color: #444;
+}
+
+.gif-search-tab li.active {
+    border-color: var(--control-active-border-color);
+    border-bottom-color: var(--gif-search-background-color);
+}
+
+.gif-search-tab li.active,
+.gif-search-tab li.active:before,
+.gif-search-tab li.active:after {
+    background: var(--gif-search-background-color);
+    color: #fff;
+}
