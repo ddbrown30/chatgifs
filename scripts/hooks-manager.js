@@ -25,8 +25,8 @@ export class HooksManager {
             button.type = "button";
 
             //Add the button into the chat control buttons
-            let controlButtons = html.querySelector(".control-buttons");
-            controlButtons.appendChild(button);
+            let buttonTargetElement = html.querySelector(".control-buttons") ?? chatControls;
+            buttonTargetElement.appendChild(button);
 
             new GifSearchBar(gifSearchBar, button);
         });
