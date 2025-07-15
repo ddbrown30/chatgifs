@@ -1,6 +1,6 @@
-export const ID = "chat-gifs";
+export const ID = "chatgifs";
 
-export const PATH = "modules/chat-gifs";
+export const PATH = "modules/chatgifs";
 
 export const CONFIG = {
     templates: {
