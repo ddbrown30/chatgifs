@@ -25,6 +25,13 @@ export default class GifSearchBar {
             this.search((ev.target).value);
         });
 
+        this.searchInput.addEventListener("keydown", event => {
+            if (event.key == "Enter") {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        });
+
         this.giphyTab = this.element.querySelector("#giphy-tab");
         this.giphyTab.addEventListener("click", () => {
             this.setSearchTab("giphy");
