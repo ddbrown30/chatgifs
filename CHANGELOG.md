@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+
+* Added the gifs button in the collapsed view
+* Fixed pressing enter causing a page submit
+
 ## 2.0.2
 
 * Fix for 13.347
