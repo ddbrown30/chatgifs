@@ -3,8 +3,8 @@
   "title": "Chat GIFs",
   "description": "Allows users to search for and post gifs to the chat.",
   "compatibility": {
-    "minimum": "13",
-    "verified": "13.346"
+    "minimum": "13.347",
+    "verified": "13.347"
   },
   "version": "0.0.0",
   "esmodules": ["module.js"],

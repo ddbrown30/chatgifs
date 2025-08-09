@@ -17,7 +17,7 @@ export class HooksManager {
             const gifSearchBar = template.content.firstChild;
 
             //Attach the search bar to the chat
-            const chatControls = html.querySelector(".chat-controls");
+            const chatControls = document.querySelector('[id="chat-controls"]');
             chatControls.appendChild(gifSearchBar);
 
             //Create the button to open the search bar
@@ -27,8 +27,8 @@ export class HooksManager {
             button.type = "button";
 
             //Add the button into the chat control buttons
-            let buttonTargetElement = html.querySelector(".control-buttons") ?? chatControls;
-            buttonTargetElement.appendChild(button);
+            const controlButtons = document.querySelector(".control-buttons");
+            controlButtons.appendChild(button);
 
             new GifSearchBar(gifSearchBar, button);
         });
