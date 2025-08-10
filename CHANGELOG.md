@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+* Fixed the gif button being added multiple times again
+
 ## 2.1.0
 
 * Added the gifs button in the collapsed view
