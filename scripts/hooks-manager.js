@@ -9,7 +9,7 @@ export class HooksManager {
     static registerHooks() {
 
         Hooks.on("renderChatLog", async (app, html, options) => {
-            if (html.querySelector('[id="gif-search"]')) return;
+            if (document.querySelector('[id="gif-search"]')) return;
 
             //Create the gif search bar element
             const template = document.createElement('template');
