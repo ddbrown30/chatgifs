@@ -26,9 +26,14 @@ export class HooksManager {
             button.classList.add("ui-control", "icon", "fas", "fa-gif");
             button.type = "button";
 
-            //Add the button before the chat control buttons
-            const controlButtons = document.querySelector(".control-buttons");
-            controlButtons.parentNode.insertBefore(button, controlButtons);
+            if (game.user.isGM) {
+                //Add the button before the chat control buttons
+                const controlButtons = document.querySelector(".control-buttons");
+                controlButtons.parentNode.insertBefore(button, controlButtons);
+            } else {
+                const privacyButtons = document.querySelector('[id="roll-privacy"]');
+                privacyButtons.parentNode.insertBefore(button, privacyButtons.nextSibling);
+            }
 
             new GifSearchBar(gifSearchBar, button);
         });
