@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.2
+
+* Fixed the gif button being displayed on players
+
 ## 2.1.1
 
 * Fixed the gif button being added multiple times again
