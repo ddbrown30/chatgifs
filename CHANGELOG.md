@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.0
+
+* Added support for KLIPY GIFs
+
 ## 2.1.2
 
 * Fixed the gif button being displayed on players

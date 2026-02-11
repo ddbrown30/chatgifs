@@ -42,6 +42,11 @@ export default class GifSearchBar {
             this.setSearchTab("tenor");
         });
 
+        this.klipyTab = this.element.querySelector("#klipy-tab");
+        this.klipyTab.addEventListener("click", () => {
+            this.setSearchTab("klipy");
+        });
+
         //Close the popup if we click outside of it
         document.addEventListener("mousedown", this.clickListener = (event) => {
             if (!event.composedPath().includes(this.element) &&
@@ -67,7 +72,7 @@ export default class GifSearchBar {
     }
 
     setSearchTab(tabName) {
-        this.apiData = tabName == "giphy" ? CONFIG.giphy : CONFIG.tenor;
+        this.apiData = CONFIG[tabName];
 
         //Update the attribution logo and placeholder string
         this.attributionImg.src = this.apiData.logo;
@@ -76,8 +81,14 @@ export default class GifSearchBar {
         if (tabName == "giphy") {
             this.giphyTab.classList.add("active");
             this.tenorTab.classList.remove("active");
+            this.klipyTab.classList.remove("active");
         } else if (tabName == "tenor") {
             this.tenorTab.classList.add("active");
+            this.giphyTab.classList.remove("active");
+            this.klipyTab.classList.remove("active");
+        } else if (tabName == "klipy") {
+            this.klipyTab.classList.add("active");
+            this.tenorTab.classList.remove("active");
             this.giphyTab.classList.remove("active");
         }
 
@@ -92,7 +103,7 @@ export default class GifSearchBar {
         var params = {
             q: inputText,
             api_key: this.apiData.apiKey, //Used by Giphy
-            key: this.apiData.apiKey, //Used by Tenor
+            key: this.apiData.apiKey, //Used by Tenor and KLIPY
             limit: this.limit,
         };
         url.search = new URLSearchParams(params).toString();
@@ -158,11 +169,20 @@ export default class GifSearchBar {
         searchResults.style.height = `${Math.max(leftY, rightY)}px`;
     }
 
-    createChatMessage(content) {
+    createChatMessage(gif) {
+        let content = `<div class="gif-container"><img src="${gif}">`;
+
+        if (this.apiData.watermark) {
+            content += `<img class="watermark" src="${this.apiData.watermark}">`;
+        }
+
+        content += `</div>`;
+
         const messageData = {
-            content: `<div class="gif-container"><img src="${content}"></div>`,
+            content: content,
             style: CONST.CHAT_MESSAGE_STYLES.OOC || 1,
         };
+
 
         return ChatMessage.create(messageData);
     }

@@ -6,6 +6,15 @@
     min-height: 150px;
 }
 
+.watermark {
+    position: relative;
+    height: 10px;
+    top: -15px;
+    margin-left: 5px;
+    margin-bottom: -10px;
+    overflow: hidden;
+}
+
 #gif-search {
     right: 5%;
     z-index: 51;
