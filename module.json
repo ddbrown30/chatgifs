@@ -4,7 +4,7 @@
   "description": "Allows users to search for and post gifs to the chat.",
   "compatibility": {
     "minimum": "13.347",
-    "verified": "13.347"
+    "verified": "14.359"
   },
   "version": "0.0.0",
   "esmodules": ["module.js"],
