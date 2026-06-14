@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0
+
+* Updated to v14
+
 ## 2.2.0
 
 * Added support for KLIPY GIFs

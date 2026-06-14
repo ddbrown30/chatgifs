@@ -3,7 +3,7 @@
   "title": "Chat GIFs",
   "description": "Allows users to search for and post gifs to the chat.",
   "compatibility": {
-    "minimum": "13.347",
+    "minimum": "14",
     "verified": "14.359"
   },
   "version": "0.0.0",
