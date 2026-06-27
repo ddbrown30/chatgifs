@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0
+
+* Removed Tenor support as the API has been sunset
+
 ## 3.0.0
 
 * Updated to v14

@@ -12,7 +12,7 @@ export default class GifSearchBar {
         this.resultsElement = element.querySelector("#gif-search-results");
         this.attributionImg = this.element.querySelector(".attribution");
         this.activateListeners(gifButtonElement);
-        this.setSearchTab("tenor");
+        this.setSearchTab("klipy");
     }
 
     activateListeners(gifButtonElement) {
@@ -35,11 +35,6 @@ export default class GifSearchBar {
         this.giphyTab = this.element.querySelector("#giphy-tab");
         this.giphyTab.addEventListener("click", () => {
             this.setSearchTab("giphy");
-        });
-
-        this.tenorTab = this.element.querySelector("#tenor-tab");
-        this.tenorTab.addEventListener("click", () => {
-            this.setSearchTab("tenor");
         });
 
         this.klipyTab = this.element.querySelector("#klipy-tab");
@@ -80,15 +75,9 @@ export default class GifSearchBar {
 
         if (tabName == "giphy") {
             this.giphyTab.classList.add("active");
-            this.tenorTab.classList.remove("active");
-            this.klipyTab.classList.remove("active");
-        } else if (tabName == "tenor") {
-            this.tenorTab.classList.add("active");
-            this.giphyTab.classList.remove("active");
             this.klipyTab.classList.remove("active");
         } else if (tabName == "klipy") {
             this.klipyTab.classList.add("active");
-            this.tenorTab.classList.remove("active");
             this.giphyTab.classList.remove("active");
         }
 
@@ -103,7 +92,7 @@ export default class GifSearchBar {
         var params = {
             q: inputText,
             api_key: this.apiData.apiKey, //Used by Giphy
-            key: this.apiData.apiKey, //Used by Tenor and KLIPY
+            key: this.apiData.apiKey, //Used by KLIPY
             limit: this.limit,
         };
         url.search = new URLSearchParams(params).toString();
